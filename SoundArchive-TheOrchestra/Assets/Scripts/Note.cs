@@ -19,12 +19,12 @@ public class Note : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.down * speed * Time.smoothDeltaTime);
+        transform.Translate(Vector3.up * speed * Time.smoothDeltaTime);
     }
 
     public void OnBecameInvisible()
     {
-        if (gameObject.transform.position.y <= -5f)
+        if (gameObject.transform.position.y >= 5f)
         {
             Destroy(gameObject);
         }

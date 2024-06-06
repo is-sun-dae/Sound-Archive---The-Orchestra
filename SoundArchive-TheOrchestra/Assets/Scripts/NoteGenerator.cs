@@ -49,7 +49,7 @@ public class NoteGenerator : MonoBehaviour
         foreach (float noteTime in noteList)
         {
             posY = noteStartPosY + notePosY * (noteTime * noteCorrectRate) + positionOffset.y;
-            Instantiate(notePrefab, new Vector3(positionOffset.x, posY, positionOffset.z), Quaternion.identity);
+            Instantiate(notePrefab, new Vector3(positionOffset.x, -posY, positionOffset.z), Quaternion.identity);
         }
     }
 }
