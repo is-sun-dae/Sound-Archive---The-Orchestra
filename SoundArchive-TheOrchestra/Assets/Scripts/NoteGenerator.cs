@@ -6,8 +6,11 @@ using UnityEngine;
 public class NoteGenerator : MonoBehaviour
 {
     private Sheet sheet;
+    private GameSetting gameSetting;
 
-    public GameObject notePrefab;
+    public GameObject upNotePrefab;
+    public GameObject downNotePrefab;
+    private GameObject notePrefab;
     
     private float noteCorrectRate = 0.001f;
 
@@ -22,8 +25,11 @@ public class NoteGenerator : MonoBehaviour
     {
         scrollSpeed = 17f;
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
+        gameSetting = GameObject.Find("GameSetting").GetComponent<GameSetting>();
         notePosY = scrollSpeed;
         noteStartPosY = scrollSpeed * 3.0f;
+
+        notePrefab = gameSetting.IsDDR ? upNotePrefab : downNotePrefab;
     }
 
     private void Update()
@@ -49,7 +55,8 @@ public class NoteGenerator : MonoBehaviour
         foreach (float noteTime in noteList)
         {
             posY = noteStartPosY + notePosY * (noteTime * noteCorrectRate) + positionOffset.y;
-            Instantiate(notePrefab, new Vector3(positionOffset.x, -posY, positionOffset.z), Quaternion.identity);
+            if (gameSetting.IsDDR) posY *= -1f;
+            Instantiate(notePrefab, new Vector3(positionOffset.x, posY, positionOffset.z), Quaternion.identity);
         }
     }
 }
