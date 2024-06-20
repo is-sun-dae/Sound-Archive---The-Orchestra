@@ -18,8 +18,7 @@ public class NoteProcess : MonoBehaviour
     private float perfectRate = 3.0f;
     private float greatRate = 7.0f;
     private float goodRate = 10.0f;
-    private float badRate = 13.0f;
-    private float missRate = 16.0f;
+    private float missRate = 14.0f;
 
     private int lineNum;
 
@@ -74,19 +73,14 @@ public class NoteProcess : MonoBehaviour
             if (Mathf.Abs(currentNoteTime1 - currentTime) <= perfectRate)
             {
                 processLane1.Dequeue();
-                score.ProcessScore(5);
+                score.ProcessScore(4);
             }
             else if (Mathf.Abs(currentNoteTime1 - currentTime) <= greatRate)
             {
                 processLane1.Dequeue();
-                score.ProcessScore(4);
-            }
-            else if (Mathf.Abs(currentNoteTime1 - currentTime) <= goodRate)
-            {
-                processLane1.Dequeue();
                 score.ProcessScore(3);
             }
-            else if (Mathf.Abs(currentNoteTime1 - currentTime) <= badRate)
+            else if (Mathf.Abs(currentNoteTime1 - currentTime) <= goodRate)
             {
                 processLane1.Dequeue();
                 score.ProcessScore(2);
@@ -103,19 +97,14 @@ public class NoteProcess : MonoBehaviour
             if (Mathf.Abs(currentNoteTime2 - currentTime) <= perfectRate)
             {
                 processLane2.Dequeue();
-                score.ProcessScore(5);
+                score.ProcessScore(4);
             }
             else if (Mathf.Abs(currentNoteTime2 - currentTime) <= greatRate)
             {
                 processLane2.Dequeue();
-                score.ProcessScore(4);
-            }
-            else if (Mathf.Abs(currentNoteTime2 - currentTime) <= goodRate)
-            {
-                processLane2.Dequeue();
                 score.ProcessScore(3);
             }
-            else if (Mathf.Abs(currentNoteTime2 - currentTime) <= badRate)
+            else if (Mathf.Abs(currentNoteTime2 - currentTime) <= goodRate)
             {
                 processLane2.Dequeue();
                 score.ProcessScore(2);
@@ -132,19 +121,14 @@ public class NoteProcess : MonoBehaviour
             if (Mathf.Abs(currentNoteTime3 - currentTime) <= perfectRate)
             {
                 processLane3.Dequeue();
-                score.ProcessScore(5);
+                score.ProcessScore(4);
             }
             else if (Mathf.Abs(currentNoteTime3 - currentTime) <= greatRate)
             {
                 processLane3.Dequeue();
-                score.ProcessScore(4);
-            }
-            else if (Mathf.Abs(currentNoteTime3 - currentTime) <= goodRate)
-            {
-                processLane3.Dequeue();
                 score.ProcessScore(3);
             }
-            else if (Mathf.Abs(currentNoteTime3 - currentTime) <= badRate)
+            else if (Mathf.Abs(currentNoteTime3 - currentTime) <= goodRate)
             {
                 processLane3.Dequeue();
                 score.ProcessScore(2);
@@ -161,19 +145,14 @@ public class NoteProcess : MonoBehaviour
             if (Mathf.Abs(currentNoteTime4 - currentTime) <= perfectRate)
             {
                 processLane4.Dequeue();
-                score.ProcessScore(5);
+                score.ProcessScore(4);
             }
             else if (Mathf.Abs(currentNoteTime4 - currentTime) <= greatRate)
             {
                 processLane4.Dequeue();
-                score.ProcessScore(4);
-            }
-            else if (Mathf.Abs(currentNoteTime4 - currentTime) <= goodRate)
-            {
-                processLane4.Dequeue();
                 score.ProcessScore(3);
             }
-            else if (Mathf.Abs(currentNoteTime4 - currentTime) <= badRate)
+            else if (Mathf.Abs(currentNoteTime4 - currentTime) <= goodRate)
             {
                 processLane4.Dequeue();
                 score.ProcessScore(2);

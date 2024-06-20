@@ -24,21 +24,17 @@ public class Score : MonoBehaviour
 
     public void ProcessScore(int rank)
     {
-        if (rank.Equals(5))
+        if (rank.Equals(4))
         {
             rankText.text = "PERFECT";
         }
-        else if (rank.Equals(4))
+        else if (rank.Equals(3))
         {
             rankText.text = "GREAT";
         }
-        else if (rank.Equals(3))
-        {
-            rankText.text = "GOOD";
-        }
         else if (rank.Equals(2))
         {
-            rankText.text = "BAD";
+            rankText.text = "GOOD";
         }
         else if (rank.Equals(1))
         {
